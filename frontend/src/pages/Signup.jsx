@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
+import PasswordInput from '../components/PasswordInput';
 
 const FREQUENCY_OPTIONS = [
   'Once per week',
@@ -150,14 +151,20 @@ const Signup = () => {
                 <label className="label-text">Phone Number (Kenyan)</label>
                 <input placeholder="07XXXXXXXX" className="input-field" value={form.phone} onChange={(e) => update('phone', e.target.value)} />
               </div>
-              <div>
-                <label className="label-text">Password</label>
-                <input type="password" className="input-field" value={form.password} onChange={(e) => update('password', e.target.value)} />
-              </div>
-              <div>
-                <label className="label-text">Confirm Password</label>
-                <input type="password" className="input-field" value={form.confirmPassword} onChange={(e) => update('confirmPassword', e.target.value)} />
-              </div>
+
+
+              <PasswordInput
+  label="Password"
+  value={form.password}
+  onChange={(e) => update('password', e.target.value)}
+/>
+<PasswordInput
+  label="Confirm Password"
+  value={form.confirmPassword}
+  onChange={(e) => update('confirmPassword', e.target.value)}
+/>
+
+
               <div>
                 <label className="label-text">Date of Birth</label>
                 <input type="date" max={new Date().toISOString().split('T')[0]} className="input-field" value={form.dateOfBirth} onChange={(e) => update('dateOfBirth', e.target.value)} />

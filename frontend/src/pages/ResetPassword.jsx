@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import api from '../services/api';
+import PasswordInput from '../components/PasswordInput';
 
 const ResetPassword = () => {
   const { token } = useParams();
@@ -37,28 +38,24 @@ const ResetPassword = () => {
         <p className="text-sm text-gray-500 mb-6">Enter your new password</p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="label-text">New Password</label>
-            <input
-              type="password"
-              required
-              minLength={6}
-              className="input-field"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <div>
-            <label className="label-text">Confirm Password</label>
-            <input
-              type="password"
-              required
-              minLength={6}
-              className="input-field"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-            />
-          </div>
+
+
+        <PasswordInput
+  label="New Password"
+  required
+  minLength={6}
+  value={password}
+  onChange={(e) => setPassword(e.target.value)}
+/>
+<PasswordInput
+  label="Confirm Password"
+  required
+  minLength={6}
+  value={confirmPassword}
+  onChange={(e) => setConfirmPassword(e.target.value)}
+/>
+
+
           <button type="submit" disabled={loading} className="btn-primary w-full">
             {loading ? 'Resetting...' : 'Reset Password'}
           </button>
