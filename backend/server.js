@@ -14,6 +14,7 @@ const articleRoutes = require('./routes/articleRoutes');
 const chatbotRoutes = require('./routes/chatbotRoutes');
 const toolsRoutes = require('./routes/toolsRoutes');
 const adminRoutes = require('./routes/adminRoutes');
+const cronRoutes = require('./routes/cronRoutes');
 
 connectDB();
 
@@ -45,7 +46,7 @@ app.use('/api/articles', articleRoutes);
 app.use('/api/chatbot', chatbotRoutes);
 app.use('/api/tools', toolsRoutes);
 app.use('/api/admin', adminRoutes);
-
+app.use('/api/cron', cronRoutes);
 // 404 + error handler (must be last)
 app.use(notFound);
 app.use(errorHandler);
