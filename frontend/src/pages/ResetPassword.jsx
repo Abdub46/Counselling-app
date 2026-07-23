@@ -38,24 +38,20 @@ const ResetPassword = () => {
         <p className="text-sm text-gray-500 mb-6">Enter your new password</p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-
-
-        <PasswordInput
-  label="New Password"
-  required
-  minLength={6}
-  value={password}
-  onChange={(e) => setPassword(e.target.value)}
-/>
-<PasswordInput
-  label="Confirm Password"
-  required
-  minLength={6}
-  value={confirmPassword}
-  onChange={(e) => setConfirmPassword(e.target.value)}
-/>
-
-
+          <PasswordInput
+            label="New Password"
+            required
+            minLength={6}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <PasswordInput
+            label="Confirm Password"
+            required
+            minLength={6}
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
           <button type="submit" disabled={loading} className="btn-primary w-full">
             {loading ? 'Resetting...' : 'Reset Password'}
           </button>

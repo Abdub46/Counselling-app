@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
-// ADD this line among your existing imports:
 import PasswordInput from '../components/PasswordInput';
 
 const Login = () => {
@@ -42,14 +41,12 @@ const Login = () => {
               onChange={(e) => setForm({ ...form, email: e.target.value })}
             />
           </div>
-
           <PasswordInput
-  label="Password"
-  required
-  value={form.password}
-  onChange={(e) => setForm({ ...form, password: e.target.value })}
-/>
-
+            label="Password"
+            required
+            value={form.password}
+            onChange={(e) => setForm({ ...form, password: e.target.value })}
+          />
           <div className="text-right">
             <Link to="/forgot-password" className="text-sm text-primary-600 hover:underline">
               Forgot Password?

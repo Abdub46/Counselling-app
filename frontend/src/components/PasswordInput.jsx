@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 
+/**
+ * Drop-in replacement for <input type="password" ... />.
+ * Accepts the same props (value, onChange, required, minLength, placeholder, etc.)
+ * plus an optional `label` to render above it, matching the app's label-text style.
+ */
 const PasswordInput = ({ label, className = '', ...inputProps }) => {
   const [visible, setVisible] = useState(false);
 
